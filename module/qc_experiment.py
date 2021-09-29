@@ -18,10 +18,12 @@ def main():
     adata = anndata.read_h5ad(sys.argv[1])
     plots = ['n_genes_by_counts', 'total_counts']
 
-    if sys.argv[2] != "SKIP" or 'mt' in adata.var:
+    if sys.argv[2] != "SKIP":
         with open(sys.argv[2]) as f:
             mito_genes = f.read().splitlines()
         mito_genes = list(set([re.sub('-I$', '', sub) for sub in mito_genes]))
+
+    if sys.argv[2] != "SKIP" or 'mt' in adata.var
         adata.var['mt'] = [x in mito_genes for x in adata.var_names]
         sc.pp.calculate_qc_metrics(
             adata, qc_vars=['mt'], percent_top=None, log1p=False, inplace=True)
