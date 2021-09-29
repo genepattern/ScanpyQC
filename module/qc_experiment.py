@@ -24,7 +24,7 @@ def main():
         mito_genes = list(set([re.sub('-I$', '', sub) for sub in mito_genes]))
         adata.var['mt'] = [x in mito_genes for x in adata.var_names]
 
-    if sys.argv[2] != "SKIP" or 'mt' in adata.var
+    if sys.argv[2] != "SKIP" or 'mt' in adata.var:
         sc.pp.calculate_qc_metrics(
             adata, qc_vars=['mt'], percent_top=None, log1p=False, inplace=True)
         plots = plots + ['pct_counts_mt']
