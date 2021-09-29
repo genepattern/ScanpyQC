@@ -35,7 +35,7 @@ def main():
             adata, percent_top=None, log1p=False, inplace=True)
 
     sc.pl.violin(adata, plots,
-                 jitter=0.4, multi_panel=True, save ="_" + sys.argv[3] + "_qc_violin_plots")
+                 jitter=0.4, multi_panel=True, save ="_" + sys.argv[3] + "_qc_violin_plots.png")
 
     if sys.argv[2] != "SKIP":
         sc.pl.scatter(adata, x='total_counts', y='pct_counts_mt',
