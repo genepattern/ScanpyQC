@@ -46,8 +46,6 @@ def main():
 
     sc.pl.scatter(adata, x='total_counts', y='n_cells_by_counts',
                   save="_" + sys.argv[3] + '_qc_n_cells_by_counts_vs_total_counts.png')
-    sc.pl.scatter(adata, x='mean_counts', y='n_cells_by_counts',
-                  save="_" + sys.argv[3] + '_qc_n_cells_by_counts_vs_mean_counts.png')
 
     sns.jointplot(
         data=adata.obs,
