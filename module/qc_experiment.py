@@ -1,8 +1,4 @@
-import os
-import sys
-import re
-import argparse
-import shutil
+import os, sys, re, argparse, shutil
 from optparse import OptionParser
 
 import anndata
@@ -22,7 +18,7 @@ def main():
     adata = anndata.read_h5ad(sys.argv[1])
     plots = ['n_genes_by_counts', 'total_counts']
 
-    if sys.argv[2] != "SKIP":
+    if sys.argv[2] != "SKIP" or 'mt' in adata.var:
         with open(sys.argv[2]) as f:
             mito_genes = f.read().splitlines()
         mito_genes = list(set([re.sub('-I$', '', sub) for sub in mito_genes]))
@@ -37,7 +33,7 @@ def main():
     sc.pl.violin(adata, plots,
                  jitter=0.4, multi_panel=True, save ="_" + sys.argv[3] + "_qc_violin_plots.png")
 
-    if sys.argv[2] != "SKIP":
+    if sys.argv[2] != "SKIP" or 'mt' in adata.var:
         sc.pl.scatter(adata, x='total_counts', y='pct_counts_mt',
                       save="_" + sys.argv[3] + '_qc_pct_counts_mitochondrial_vs_total_counts.png')
 
