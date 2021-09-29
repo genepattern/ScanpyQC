@@ -1,0 +1,11 @@
+[
+    {
+        "name": "Input and Output",
+        "parameters": [
+            "data.file",
+            "mtGenes",
+            "output.basename",
+            "genome"
+        ]
+    }
+]
