@@ -15,7 +15,7 @@ def main():
 
     sc.settings.figdir = ""
 
-    adata = anndata.read_h5ad(sys.argv[1])
+    adata = sc.read(sys.argv[1])
     plots = ['n_genes_by_counts', 'total_counts']
 
     if sys.argv[2] != "SKIP":
