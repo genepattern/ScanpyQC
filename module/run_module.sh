@@ -60,7 +60,7 @@ if [ ! -z ${GENOME} ] && [ ${DATA_FILE: -3} == ".h5" ]; then
     eval "${PY_EXEC} ${SRC_PATH}/convert_to_h5ad.py ${SOURCE_TYPE} ${DATA_FILE} ${FULL_OUTPUT} ${GENOME}"
     exitOnError $? "Error during conversion from h5 to h5ad format."
     DATA_FILE=${FULL_OUTPUT}
-elif [ ${DATA_FILE: -5} == ".loom" ]: then
+elif [ ${DATA_FILE: -5} == ".loom" ]; then
     SOURCE_TYPE="loom"
     echo "-- converting from LOOM to H5AD format --"
     FULL_OUTPUT="${OUTPUT_BASENAME}.h5ad"
