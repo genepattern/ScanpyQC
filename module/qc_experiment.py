@@ -23,6 +23,11 @@ def main():
             mito_genes = f.read().splitlines()
         mito_genes = list(set([re.sub('-I$', '', sub) for sub in mito_genes]))
         adata.var['mt'] = [x in mito_genes for x in adata.var_names]
+    else:
+        mito_genes = = [i for i in list(adata.obs.index) if i.startswith('MT-')]
+        mito_genes = list(set(mito_genes))
+            if len(mito_genes) > 0:
+                adata.var['mt'] = [x in mito_genes for x in adata.var_names]
 
     if sys.argv[2] != "SKIP" or 'mt' in adata.var:
         sc.pp.calculate_qc_metrics(
