@@ -24,10 +24,14 @@ def main():
         mito_genes = list(set([re.sub('-I$', '', sub) for sub in mito_genes]))
         adata.var['mt'] = [x in mito_genes for x in adata.var_names]
     else:
-        mito_genes = = [i for i in list(adata.obs.index) if i.startswith('MT-')]
-        mito_genes = list(set(mito_genes))
-            if len(mito_genes) > 0:
-                adata.var['mt'] = [x in mito_genes for x in adata.var_names]
+        if 'gene_name' in adata.var:
+            gene_name_uppercase = [x.upper() for x in list(adata.var['gene_name'])]
+        else:
+            gene_name_uppercase = [x.upper() for x in list(adata.var.index)]
+        is_mt = list(map(lambda x:x.startswith('MT-'),gene_name_uppercase))
+        mito_genes = list(set(adata.var.index[is_mt]))
+        if len(mito_genes) > 0:
+            adata.var['mt'] = [x in mito_genes for x in adata.var_names]
 
     if sys.argv[2] != "SKIP" or 'mt' in adata.var:
         sc.pp.calculate_qc_metrics(
