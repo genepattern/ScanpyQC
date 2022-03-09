@@ -1,0 +1,43 @@
+# ScanpyQC Documentation
+
+<b>Description: </b> Create Scanpy Quality Control Plots to enable unblinded dataset filtering with ScanpyUtilities. This module can be run both before and after the ScanpyUtilities module to determine which filtering thresholds to apply in ScanpyUtilities as well as to determine the outcome of this filtering.
+
+<b>Author(s): </b> Wrapped as a module by Anthony S. Castanza, Mesirov Lab, UCSD School of Medicine
+
+<b>Contact: </b> Module specific issues: https://genepattern.org/help
+
+## References
+
+- Wolf, A.F., et al. (2018). SCANPY: large-scale single-cell gene expression data analysis. Genome Biology. 19:15
+
+- Lun, A.T.L., et al. (2016). A step-by-step workflow for low-level analysis of single-cell RNA-seq data with Bioconductor. F1000Res., 5, 2122.
+
+- https://github.com/theislab/scanpy
+
+## Parameters:
+
+| Name | Description |
+| ---- | ----------- |
+| data file | A file containing single-cell data. h5ad, loom and mtx file formats are accepted. A 10x formatted hdf5 file may also be provided along with the 'genome' argument. The file will be internally converted to an h5ad file before proceeding. |
+| mtGenes | A file containing a list of the gene ids for mitochondrial genes. Optional, used for filtering by mitochondrial abundance. If a dataset already has mitochondrial genes annotated under .var['mt'] this file can be skipped. <i>Optional.</i> |
+| output basename | Base filename used for labeling output files |
+| genome | When converting a 10x formated HDF5 file, the module will internally call read_10x_h5 from the scanpy package. This function expects a genome argument which specifies the name of the data set in the HDF5 file. e.g. 'GRCh38' |
+
+## Output Files
+
+<p> Several plots each containing multiple components are produced.
+
+| Output Filename | Desctiption |
+| --------------- | ----------- |
+| violin_\<output.basename>_qc_violin_plots.png | <b>This is the main output file for most users.</b> <br>This plot contains 2-3 panels of violin plots (the third is only produced if either mtGenes is given, or the 'mt' key is annotated.). <ul><li>The first panel plots n_genes_by_counts (the number of genes with at least 1 count in a cell. Equivelent to Seurat's 'nFeature_RNA'.). This is useful for selecting cells with minimum and maximum thresholds for number of genes expressed. <li>The second panel plots the total number of counts in each cell, useful for selecting cells which are within certian read depth thresolds. <li>The final panel plots the mitochondrial percentage of each cell, useful for eliminating cells that have an overabundance of mitochondria.</ul> |
+| \<output.basename>_qc_total_genes_by\_<br>counts_vs_total_counts_with_histograms.png | This plot contains a plot of n_genes_by_counts vs. total_counts, accompanied by stacked histograms as produced by scanpy's .pp.calculate_qc_metrics function. |
+| scatter_\<output.basename>\_qc_n_cells_by\_<br>counts_vs_total_counts.png | This contains a scatterplot of the number of cells with a specific number of counts (n_cells_by_counts) vs. the total number of counts. |
+| scatter_\<output.basename>_qc_n_genes_by\_<br>counts_vs_total_counts.png | This contains a scatterplot of the number of expressed genes vs. the total number of counts in a cell (allows for the estiamtion of sequencing depth.) |
+| scatter_\<output.basename>_qc_pct_counts\_<br>mitochondrial_vs_total_counts.png | Only produced if either mtGenes is given, or the 'mt' key is annotated. Produces a plot of the percentage of mitochondrial counts (pct_counts_mt) vs. total_counts. Useful for setting mitochondrial filtering thresholds |
+
+## Module Technical Details
+<b> Module Language: </b> Python
+
+<b>Source Repository: </b> https://github.com/genepattern/ScanpyQC/releases/tag/v0.1
+
+<b>Docker image: </b> genepattern/scanpyutilities:0.100
