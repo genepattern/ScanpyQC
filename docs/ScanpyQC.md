@@ -21,7 +21,7 @@
 | data file | A file containing single-cell data. h5ad, loom and mtx file formats are accepted. A 10x formatted hdf5 file may also be provided along with the 'genome' argument. The file will be internally converted to an h5ad file before proceeding. |
 | mtGenes | A file containing a list of the gene ids for mitochondrial genes. Optional, used for filtering by mitochondrial abundance. If a dataset already has mitochondrial genes annotated under .var['mt'] this file can be skipped. <i>Optional.</i> |
 | output basename | Base filename used for labeling output files |
-| genome | When converting a 10x formated HDF5 file, the module will internally call read_10x_h5 from the scanpy package. This function expects a genome argument which specifies the name of the data set in the HDF5 file. e.g. 'GRCh38' |
+| genome | When converting a 10x formated HDF5 file, the module will internally call read_10x_h5 from the scanpy package. This function expects a genome argument which specifies the name of the data set in the HDF5 file. e.g. 'GRCh38'. <i> <b>Only</b> used for 10x formatted HDF5 files.</i> |
 
 ## Output Files
 
