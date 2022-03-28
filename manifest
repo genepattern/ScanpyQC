@@ -1,13 +1,14 @@
+#Mon, 28 Mar 2022 18:06:51 -0400
 #ScanpyQC
 #Wed Sep 29 22:14:06 UTC 2021
 JVMLevel=
-LSID=urn:lsid:genepattern.org:module.analysis:00428
+LSID=urn\:lsid\:genepattern.org\:module.analysis\:00428\:0.7
 author=Anthony S. Castanza
 categories=singlecell
 commandLine=bash <libdir>run_module.sh --python.executable\=python --src.path\=<libdir> --data.file\=<data.file> <mtGenes> --output.basename\=<output.basename> <genome>
 cpuType=any
 description=Create Scanpy Quality Control Plots to enable unblinded dataset filtering with ScanpyUtilities 
-documentationUrl=https://genepattern.github.io/ScanpyQC/v1/
+documentationUrl=https\://genepattern.github.io/ScanpyQC/v1/
 fileFormat=h5;h5ad;loom;mtx
 job.cpuCount=4
 job.docker.image=genepattern/scanpyutilities\:0.100
@@ -69,8 +70,8 @@ p4_prefix_when_specified=--genome\=
 p4_type=java.lang.String
 p4_value=
 privacy=public
-publicationDate=10/02/2019 11\:45 
-quality=development
+publicationDate=03/28/2022 18\:06 
+quality=preproduction
 requiredPatchLSIDs=
 requiredPatchURLs=
 src.repo=
