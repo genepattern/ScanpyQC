@@ -1,13 +1,13 @@
 #ScanpyQC
 #Wed Sep 29 22:14:06 UTC 2021
 JVMLevel=
-LSID=urn\:lsid\:8080.gpserver.ip-172-31-26-71.ip-172-31-26-71.ec2.internal\:genepatternmodules\:353\:5
+LSID=urn:lsid:genepattern.org:module.analysis:00428
 author=Anthony S. Castanza
 categories=singlecell
 commandLine=bash <libdir>run_module.sh --python.executable\=python --src.path\=<libdir> --data.file\=<data.file> <mtGenes> --output.basename\=<output.basename> <genome>
 cpuType=any
 description=Create Scanpy Quality Control Plots to enable unblinded dataset filtering with ScanpyUtilities 
-documentationUrl=
+documentationUrl=https://genepattern.github.io/ScanpyQC/v1/
 fileFormat=h5;h5ad;loom;mtx
 job.cpuCount=4
 job.docker.image=genepattern/scanpyutilities\:0.100
@@ -77,4 +77,4 @@ src.repo=
 taskDoc=
 taskType=singlecell
 userid=acastanza
-version=Switch to QC Module Test
+version=first Jenkins prerelease
