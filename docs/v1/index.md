@@ -4,7 +4,7 @@
 
 <b>Author(s): </b> Wrapped as a module by Anthony S. Castanza, Mesirov Lab, UCSD School of Medicine
 
-<b>Contact: </b> Module specific issues: https://genepattern.org/help
+<b>Contact: </b> Module specific issues: [https://genepattern.org/help](https://genepattern.org/help)
 
 ## References
 
@@ -36,11 +36,18 @@
 | scatter_\<output.basename>_qc_n_genes_by\_<br>counts_vs_total_counts.png             | This contains a scatterplot of the number of expressed genes vs. the total number of counts in a cell (allows for the estiamtion of sequencing depth.)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
 | scatter_\<output.basename>_qc_pct_counts\_<br>mitochondrial_vs_total_counts.png      | Only produced if either mtGenes is given, or the 'mt' key is annotated. Produces a plot of the percentage of mitochondrial counts (pct_counts_mt) vs. total_counts. Useful for setting mitochondrial filtering thresholds                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
 
+## Example Data:
+
+
 ## Module Technical Details
-<b> Module Language: </b> Python 3.6
+<b> Module Language: </b> Python 3.6<br><br>
 
 <b> Algorithm Version: </b> Scanpy 1.3.3
 
 <b>Source Repository: </b> [https://github.com/genepattern/ScanpyQC/releases/tag/v1](https://github.com/genepattern/ScanpyQC/releases/tag/v1)
 
-<b>Docker image: </b> [https://genepattern.github.io/ScanpyQC/v1/](https://genepattern.github.io/ScanpyQC/v1/)
+<b>Docker image: </b> [
+
+| **Version** | **Comment**      |
+|-------------|------------------|
+| 1           | Initial release. |
