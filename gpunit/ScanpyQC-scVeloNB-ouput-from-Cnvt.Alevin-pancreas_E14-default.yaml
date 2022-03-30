@@ -11,8 +11,8 @@ params:
 assertions:
     jobStatus: success
     files:
-      "violin_\<output.basename>_qc_violin_plots.png": !!null
-        "\<output.basename>_qc_total_genes_by\_<br>counts_vs_total_counts_with_histograms.png": !!null
-        "scatter_\<output.basename>\_qc_n_cells_by\_<br>counts_vs_total_counts.png": !!null
-        "scatter_\<output.basename>_qc_n_genes_by\_<br>counts_vs_total_counts.png": !!null
-        "scatter_\<output.basename>_qc_pct_counts\_<br>mitochondrial_vs_total_counts.png": !!null
+        "violin_<output.basename>_qc_violin_plots.png": !!null
+        "<output.basename>_qc_total_genes_by_<br>counts_vs_total_counts_with_histograms.png": !!null
+        "scatter_<output.basename>_qc_n_cells_by_<br>counts_vs_total_counts.png": !!null
+        "scatter_<output.basename>_qc_n_genes_by_<br>counts_vs_total_counts.png": !!null
+        "scatter_<output.basename>_qc_pct_counts_<br>mitochondrial_vs_total_counts.png": !!null
