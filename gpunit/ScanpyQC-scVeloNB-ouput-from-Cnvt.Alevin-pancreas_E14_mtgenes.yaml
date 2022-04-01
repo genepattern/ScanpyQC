@@ -1,0 +1,18 @@
+#
+# LSID=urn:lsid:genepattern.org:module.analysis:00428:0.7
+#
+name: "ScanpyQC-scVeloNB-ouput-from-Cnvt.Alevin-pancreas_E14_mtgenes-nightly"
+module: ScanpyQC
+params:
+    data.file: "https://datasets-genepattern-org.s3.amazonaws.com/data/module_support_files/ScanpyQC/NB_ConvertAlevin-E14_5_Pancreas.h5ad"
+    mtGenes: "./inputs/NB_ConvertAlevin-gencode.vM26.annotation.velocity.93bp_flank.mtGenes.txt"
+    output.basename: <data.file_basename>
+    genome: ""
+assertions:
+    jobStatus: success
+    files:
+        "violin_NB_ConvertAlevin-E14_5_Pancreas_qc_violin_plots.png": !!null
+        "NB_ConvertAlevin-E14_5_Pancreas_qc_total_genes_by_counts_vs_total_counts_with_histograms.png": !!null
+        "scatter_NB_ConvertAlevin-E14_5_Pancreas_qc_n_cells_by_counts_vs_total_counts.png": !!null
+        "scatter_NB_ConvertAlevin-E14_5_Pancreas_qc_n_genes_by_counts_vs_total_counts.png": !!null
+        "scatter_NB_ConvertAlevin-E14_5_Pancreas_qc_pct_counts_mitochondrial_vs_total_counts.png": !!null
