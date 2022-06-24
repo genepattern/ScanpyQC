@@ -5,7 +5,7 @@ JVMLevel=
 LSID=urn\:lsid\:genepattern.org\:module.analysis\:00428\:0.7
 author=Anthony S. Castanza
 categories=singlecell
-commandLine=bash /scanpyqc/run_module.sh --python.executable\=python --src.path\=<libdir> --data.file\=<data.file> <mtGenes> --output.basename\=<output.basename> <genome>
+commandLine=bash /scanpyqc/run_module.sh --python.executable\=python --src.path\=/scanpyqc/ --data.file\=<data.file> <mtGenes> --output.basename\=<output.basename> <genome>
 cpuType=any
 description=Create Scanpy Quality Control Plots to enable unblinded dataset filtering with ScanpyUtilities 
 documentationUrl=https\://genepattern.github.io/ScanpyQC/v1/
